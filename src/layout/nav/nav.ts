@@ -15,7 +15,6 @@ export class Nav {
   login() {
     this.accountService.login(this.creds).subscribe({
       next: result => {
-        console.log(result);
         this.creds = {};
       },
       error: error => alert(error.message)

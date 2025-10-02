@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { User } from '../../types/user';
+import { LoginCreds, RegisterCreds, User } from '../../types/user';
 import { tap } from 'rxjs';
 
 @Injectable({
@@ -12,15 +12,32 @@ export class AccountService {
 
   baseUrl = 'https://localhost:7132/api/';
 
-  login(creds: any) {
+  register(creds: RegisterCreds) {
+    creds.roles = ['User'];
+    return this.http.post<any>(this.baseUrl + 'auth/register', creds);
+    // return this.http.post<any>(this.baseUrl + 'auth/register', creds).pipe(
+    //   tap(user => {
+    //     console.log('in the tap method');
+    //     if (user) {
+    //       this.setCurrentUser(user);
+    //     }
+    //   })
+    // );
+  }
+
+  login(creds: LoginCreds) {
     return this.http.post<User>(this.baseUrl + 'auth/login', creds).pipe(
       tap(user => {
         if (user) {
-          localStorage.setItem('user', JSON.stringify(user));
-          this.currentUser.set(user);
+          this.setCurrentUser(user);
         }
       })
     );
+  }
+
+  setCurrentUser(user: User) {
+    localStorage.setItem('user', JSON.stringify(user));
+    this.currentUser.set(user);
   }
 
   logout() {
