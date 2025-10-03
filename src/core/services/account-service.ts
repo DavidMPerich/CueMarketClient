@@ -14,15 +14,13 @@ export class AccountService {
 
   register(creds: RegisterCreds) {
     creds.roles = ['User'];
-    return this.http.post<any>(this.baseUrl + 'auth/register', creds);
-    // return this.http.post<any>(this.baseUrl + 'auth/register', creds).pipe(
-    //   tap(user => {
-    //     console.log('in the tap method');
-    //     if (user) {
-    //       this.setCurrentUser(user);
-    //     }
-    //   })
-    // );
+    return this.http.post<any>(this.baseUrl + 'auth/register', creds).pipe(
+      tap(user => {
+        if (user) {
+          this.setCurrentUser(user);
+        }
+      })
+    );
   }
 
   login(creds: LoginCreds) {
