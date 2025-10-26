@@ -1,13 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CueService } from '../../../core/services/cue-service';
-import { ActivatedRoute } from '@angular/router';
-import { AsyncPipe } from '@angular/common';
+import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
+import { AsyncPipe, CurrencyPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Cue } from '../../../types/cue';
 
 @Component({
   selector: 'app-cue-detailed',
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, RouterLink, RouterLinkActive, CurrencyPipe],
   templateUrl: './cue-detailed.html',
   styleUrl: './cue-detailed.css'
 })
