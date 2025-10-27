@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CueService } from '../../../core/services/cue-service';
 import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
-import { AsyncPipe, CurrencyPipe } from '@angular/common';
+import { AsyncPipe, CommonModule, CurrencyPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Cue } from '../../../types/cue';
 

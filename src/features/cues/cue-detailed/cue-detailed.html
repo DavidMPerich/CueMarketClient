@@ -1,31 +1,42 @@
 @if (cue$ | async; as cue) {
     <div class="flex gap-6">
-        <div class="card bg-base-100 flex flex-col h-[85vh] w-1/4">
-            <img src="/pool-cue.png" alt="image of cue" class="rounded-box mx-3 mt-3 object-cover">
-            <div class="card-body">
-                <div class="flex flex-col items-center">
-                    <div class="flex text-2xl text-primary">
-                        {{cue.year}} {{cue.maker}} {{cue.model}}
-                    </div>
-                    <div class="text-sm">
-                        {{cue.price| currency}}
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <ul class="menu rounded-box w-full text-xl">
-                    <li>Joint Type: {{cue.jointType}}</li>
-                    <li>Weight: {{cue.weight}}</li>
-                    <li>Length: {{cue.length}}</li>
-                    <li>Imperfections: {{cue.imperfections}}</li>
-                </ul>
+
+        <!-- Left Side -->
+        <div class="w-80 flex-shrink-0 bg-base-100 p-6 rounded-md shadow-lg">
+            <div class="mb-6">
+                <img src="pool-cue.png" alt="Cue Image" class="w-full h-auto rounded-xl object-cover border border-gray-200">
             </div>
-            <div class="card-actions justify-between gap-2 px-2 mb-3">
-                <button class="btn btn-info flex-1">Message</button>
+            <div class="mb-4">
+                <h2 class="text-gray-500 text-sm uppercase tracking-wide mb-1">Maker/Brand</h2>
+                <p class="text-gray-300 font-bold text-xl">{{cue.maker}} {{cue.model}} {{cue.year ? `(${cue.year})` : ''}}</p>
             </div>
+            <div class="mb-4">
+                <h2 class="text-gray-500 text-sm uppercase tracking-wide mb-1">Description</h2>
+                <p class="text-gray-300 text-medium">
+                    A sleek, professional-grade cue with a Cocobolo forearm and ebony inlays. Perfect balance and precision for advanced players.
+                </p>
+            </div>
+            <div class="mb-4">
+                <h2 class="text-gray-500 text-sm uppercase tracking-wide mb-1">Asking Price</h2>
+                <p class="text-green-700 font-bold text-xl">{{cue.price | currency}}</p>
+            </div>
+            <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl font-semibold hover:bg-blue-700 transition">
+                Contact Seller
+            </button>
         </div>
-        <div class="card bg-base-100 w-3/4 p-6">
-            <h3 class="card-title text-3xl text-primary">Lambros</h3>
-            <div class="divider"></div>
+
+        <div class="flex-1 tabs tabs-lift rounded-md overflow-hidden">
+            <input type="radio" name="my_tabs_3" class="tab" aria-label="Overview" checked="checked" />
+            <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 1</div>
+
+            <input type="radio" name="my_tabs_3" class="tab" aria-label="Butt" />
+            <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 2</div>
+
+            <input type="radio" name="my_tabs_3" class="tab" aria-label="Shafts" />
+            <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 3</div>
+
+            <input type="radio" name="my_tabs_3" class="tab" aria-label="Photos" />
+            <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 3</div>
         </div>
     </div>
 } @else {
