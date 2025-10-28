@@ -1,3 +1,5 @@
+import { Butt } from "./butt";
+
 export type Cue = {
     id: string;
     type: string;
@@ -5,7 +7,7 @@ export type Cue = {
     maker: string;
     model: string;
     year: string;
-    buttId: string;
+    butt: Butt;
     jointType: string;
     imperfections: string;
     weight: string;
