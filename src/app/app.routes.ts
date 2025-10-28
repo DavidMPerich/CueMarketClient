@@ -27,10 +27,10 @@ export const routes: Routes = [
                 component: CueDetailed,
                 children: [
                     { path: '', redirectTo: 'overview', pathMatch: 'full' },
-                    { path: 'overview', component: CueOverview, title: 'Overview' },
-                    { path: 'butt', component: CueButt, title: 'Butt' },
-                    { path: 'shafts', component: CueShafts, title: 'Shafts' },
-                    { path: 'photos', component: CuePhotos, title: 'Photos'}
+                    { path: 'overview', component: CueOverview },
+                    { path: 'butt', component: CueButt },
+                    { path: 'shafts', component: CueShafts },
+                    { path: 'photos', component: CuePhotos }
                 ]
             },
             // { path: 'build', component: Build },
