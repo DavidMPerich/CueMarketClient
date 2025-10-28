@@ -13,6 +13,7 @@ import { CueOverview } from '../features/cues/cue-overview/cue-overview';
 import { CueButt } from '../features/cues/cue-butt/cue-butt';
 import { CueShafts } from '../features/cues/cue-shafts/cue-shafts';
 import { CuePhotos } from '../features/cues/cue-photos/cue-photos';
+import { cueResolver } from '../features/cues/cue-resolver';
 
 export const routes: Routes = [
     { path: '', component: Home },
@@ -24,6 +25,8 @@ export const routes: Routes = [
             { path: 'cues', component: CueList },
             { 
                 path: 'cues/:id', 
+                resolve: { cue: cueResolver },
+                runGuardsAndResolvers: 'always',
                 component: CueDetailed,
                 children: [
                     { path: '', redirectTo: 'overview', pathMatch: 'full' },

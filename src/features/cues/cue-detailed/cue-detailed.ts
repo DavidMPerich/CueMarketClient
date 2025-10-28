@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { CueService } from '../../../core/services/cue-service';
 import { ActivatedRoute, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AsyncPipe, CommonModule, CurrencyPipe } from '@angular/common';
@@ -14,17 +14,11 @@ import { Cue } from '../../../types/cue';
 export class CueDetailed implements OnInit {
   private cueService = inject(CueService);
   private route = inject(ActivatedRoute);
-  protected cue$?: Observable<Cue>;
+  protected cue = signal<Cue | undefined>(undefined);
 
   ngOnInit() {
-    this.cue$ = this.loadCue();
-  }
-
-  loadCue() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (!id) {
-      return;
-    }
-    return this.cueService.getCue(id);
+    this.route.data.subscribe({
+      next: data => this.cue.set(data['cue'])
+    })
   }
 }
