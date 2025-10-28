@@ -9,6 +9,10 @@ import { CueList } from '../features/cues/cue-list/cue-list';
 import { CueDetailed } from '../features/cues/cue-detailed/cue-detailed';
 import { AboutUs } from '../features/about-us/about-us';
 import { Contact } from '../features/contact/contact';
+import { CueOverview } from '../features/cues/cue-overview/cue-overview';
+import { CueButt } from '../features/cues/cue-butt/cue-butt';
+import { CueShafts } from '../features/cues/cue-shafts/cue-shafts';
+import { CuePhotos } from '../features/cues/cue-photos/cue-photos';
 
 export const routes: Routes = [
     { path: '', component: Home },
@@ -18,7 +22,17 @@ export const routes: Routes = [
         canActivate: [authGuard],
         children: [
             { path: 'cues', component: CueList },
-            { path: 'cues/:id', component: CueDetailed },
+            { 
+                path: 'cues/:id', 
+                component: CueDetailed,
+                children: [
+                    { path: '', redirectTo: 'overview', pathMatch: 'full' },
+                    { path: 'overview', component: CueOverview, title: 'Overview' },
+                    { path: 'butt', component: CueButt, title: 'Butt' },
+                    { path: 'shafts', component: CueShafts, title: 'Shafts' },
+                    { path: 'photos', component: CuePhotos, title: 'Photos'}
+                ]
+            },
             // { path: 'build', component: Build },
             { path: 'about-us', component: AboutUs },
             { path: 'contact', component: Contact },

@@ -25,7 +25,7 @@
             </button>
         </div>
 
-        <div class="flex-1 tabs tabs-lift rounded-md overflow-hidden">
+        <!-- <div class="flex-1 tabs tabs-lift rounded-md overflow-hidden">
             <input type="radio" name="my_tabs_3" class="tab" aria-label="Overview" checked="checked" />
             <div class="tab-content bg-base-100 border-base-300 p-6">
                 <div class="mb-6">
@@ -153,6 +153,18 @@
 
             <input type="radio" name="my_tabs_3" class="tab" aria-label="Photos" />
             <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 3</div>
+        </div> -->
+
+        <div class="flex-1 overflow-hidden">
+            <div class="tabs tabs-lifted">
+                <a routerLink="overview" class="tab tabs-lifted" routerLinkActive="tab-active rounded-t-md bg-base-100 border-base-300">Overview</a>
+                <a routerLink="butt" class="tab tabs-lifted" routerLinkActive="tab-active rounded-t-md bg-base-100 border-base-300">Butt</a>
+                <a routerLink="shafts" class="tab tabs-lifted" routerLinkActive="tab-active rounded-t-md bg-base-100 border-base-300">Shafts</a>
+                <a routerLink="photos" class="tab tabs-lifted" routerLinkActive="tab-active rounded-t-md bg-base-100 border-base-300">Photos</a>
+            </div>
+            <div class="p-6 bg-base-100 border-base-300 rounded-b-md rounded-tr-md">
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </div>
 } @else {
