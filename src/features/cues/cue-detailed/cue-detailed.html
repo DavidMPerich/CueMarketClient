@@ -7,17 +7,17 @@
                 <img src="pool-cue.png" alt="Cue Image" class="w-full h-auto rounded-xl object-cover border border-gray-200">
             </div>
             <div class="mb-4">
-                <h2 class="text-gray-500 text-sm uppercase tracking-wide mb-1">Maker/Brand</h2>
+                <h2 class="text-gray-500 text-sm uppercase tracking-wide">Maker/Brand</h2>
                 <p class="text-gray-300 font-bold text-xl">{{cue.maker}} {{cue.model}} {{cue.year ? `(${cue.year})` : ''}}</p>
             </div>
             <div class="mb-4">
-                <h2 class="text-gray-500 text-sm uppercase tracking-wide mb-1">Description</h2>
+                <h2 class="text-gray-500 text-sm uppercase tracking-wide">Description</h2>
                 <p class="text-gray-300 text-medium">
                     A sleek, professional-grade cue with a Cocobolo forearm and ebony inlays. Perfect balance and precision for advanced players.
                 </p>
             </div>
             <div class="mb-4">
-                <h2 class="text-gray-500 text-sm uppercase tracking-wide mb-1">Asking Price</h2>
+                <h2 class="text-gray-500 text-sm uppercase tracking-wide">Asking Price</h2>
                 <p class="text-green-700 font-bold text-xl">{{cue.price | currency}}</p>
             </div>
             <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl font-semibold hover:bg-blue-700 transition">
@@ -27,7 +27,44 @@
 
         <div class="flex-1 tabs tabs-lift rounded-md overflow-hidden">
             <input type="radio" name="my_tabs_3" class="tab" aria-label="Overview" checked="checked" />
-            <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 1</div>
+            <div class="tab-content bg-base-100 border-base-300 p-6">
+                <div class="mb-6">
+                    <h2 class="text-gray-500 text-sm uppercase tracking-wide">Owner</h2>
+                    <p class="text-gray-300 text-medium">
+                        {{cue.ownerId}}
+                    </p>
+                </div>
+                <div class="mb-6">
+                    <h2 class="text-gray-500 text-sm uppercase tracking-wide">Type</h2>
+                    <p class="text-gray-300 text-medium">
+                        {{cue.type}}
+                    </p>
+                </div>
+                <div class="mb-6">
+                    <h2 class="text-gray-500 text-sm uppercase tracking-wide">Joint Type</h2>
+                    <p class="text-gray-300 text-medium">
+                        {{cue.jointType}}
+                    </p>
+                </div>
+                <div class="mb-6">
+                    <h2 class="text-gray-500 text-sm uppercase tracking-wide">Weight</h2>
+                    <p class="text-gray-300 text-medium">
+                        {{cue.weight}}
+                    </p>
+                </div>
+                <div class="mb-6">
+                    <h2 class="text-gray-500 text-sm uppercase tracking-wide">Length</h2>
+                    <p class="text-gray-300 text-medium">
+                        {{cue.length}}
+                    </p>
+                </div>
+                <div class="mb-6">
+                    <h2 class="text-gray-500 text-sm uppercase tracking-wide">Imperfections</h2>
+                    <p class="text-gray-300 text-medium">
+                        {{cue.imperfections}}
+                    </p>
+                </div>                
+            </div>
 
             <input type="radio" name="my_tabs_3" class="tab" aria-label="Butt" />
             <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 2</div>
