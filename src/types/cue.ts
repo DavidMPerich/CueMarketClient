@@ -14,4 +14,5 @@ export type Cue = {
     length: string;
     price: number;
     isVerified: boolean;
+    description: string;
 }
