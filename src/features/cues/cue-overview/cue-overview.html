@@ -1,1 +1,38 @@
-<p>cue-overview works!</p>
+@if (cue(); as cue) {
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Owner</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.ownerId}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Type</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.type}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Joint Type</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.jointType}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Weight</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.weight}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Length</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.length}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Imperfections</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.imperfections}}
+        </p>
+    </div>        
+}

@@ -25,47 +25,8 @@
             </button>
         </div>
 
+        <!-- Old Code -->
         <!-- <div class="flex-1 tabs tabs-lift rounded-md overflow-hidden">
-            <input type="radio" name="my_tabs_3" class="tab" aria-label="Overview" checked="checked" />
-            <div class="tab-content bg-base-100 border-base-300 p-6">
-                <div class="mb-6">
-                    <h2 class="text-gray-500 text-sm uppercase tracking-wide">Owner</h2>
-                    <p class="text-gray-300 text-medium">
-                        {{cue.ownerId}}
-                    </p>
-                </div>
-                <div class="mb-6">
-                    <h2 class="text-gray-500 text-sm uppercase tracking-wide">Type</h2>
-                    <p class="text-gray-300 text-medium">
-                        {{cue.type}}
-                    </p>
-                </div>
-                <div class="mb-6">
-                    <h2 class="text-gray-500 text-sm uppercase tracking-wide">Joint Type</h2>
-                    <p class="text-gray-300 text-medium">
-                        {{cue.jointType}}
-                    </p>
-                </div>
-                <div class="mb-6">
-                    <h2 class="text-gray-500 text-sm uppercase tracking-wide">Weight</h2>
-                    <p class="text-gray-300 text-medium">
-                        {{cue.weight}}
-                    </p>
-                </div>
-                <div class="mb-6">
-                    <h2 class="text-gray-500 text-sm uppercase tracking-wide">Length</h2>
-                    <p class="text-gray-300 text-medium">
-                        {{cue.length}}
-                    </p>
-                </div>
-                <div class="mb-6">
-                    <h2 class="text-gray-500 text-sm uppercase tracking-wide">Imperfections</h2>
-                    <p class="text-gray-300 text-medium">
-                        {{cue.imperfections}}
-                    </p>
-                </div>                
-            </div>
-
             <input type="radio" name="my_tabs_3" class="tab" aria-label="Butt" />
             <div class="tab-content bg-base-100 border-base-300 p-6">
                 <div class="mb-6">
@@ -147,22 +108,17 @@
                     </p>
                 </div>
             </div>
-
-            <input type="radio" name="my_tabs_3" class="tab" aria-label="Shafts" />
-            <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 3</div>
-
-            <input type="radio" name="my_tabs_3" class="tab" aria-label="Photos" />
-            <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 3</div>
         </div> -->
 
-        <div class="flex-1 overflow-hidden">
+        <!-- Specifications -->
+        <div class="flex-1 flex flex-col">
             <div class="tabs tabs-lifted">
                 <a routerLink="overview" class="tab tabs-lifted" routerLinkActive="tab-active rounded-t-md bg-base-100 border-base-300">Overview</a>
                 <a routerLink="butt" class="tab tabs-lifted" routerLinkActive="tab-active rounded-t-md bg-base-100 border-base-300">Butt</a>
                 <a routerLink="shafts" class="tab tabs-lifted" routerLinkActive="tab-active rounded-t-md bg-base-100 border-base-300">Shafts</a>
                 <a routerLink="photos" class="tab tabs-lifted" routerLinkActive="tab-active rounded-t-md bg-base-100 border-base-300">Photos</a>
             </div>
-            <div class="p-6 bg-base-100 border-base-300 rounded-b-md rounded-tr-md">
+            <div class="flex-1 p-6 bg-base-100 border-base-300 rounded-b-md rounded-tr-md">
                 <router-outlet></router-outlet>
             </div>
         </div>
