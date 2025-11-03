@@ -14,13 +14,13 @@
     <div class="mb-6">
         <h2 class="text-gray-500 text-sm uppercase tracking-wide">Point Type</h2>
         <p class="text-gray-300 text-medium">
-            {{cue.butt.pointType}}
+            {{PointTypeDisplay[cue.butt.pointType]}}
         </p>
     </div>
     <div class="mb-6">
         <h2 class="text-gray-500 text-sm uppercase tracking-wide">Point Pattern</h2>
         <p class="text-gray-300 text-medium">
-            {{cue.butt.pointPattern}}
+            {{PointPatternDisplay[cue.butt.pointPattern]}}
         </p>
     </div>
     <div class="mb-6">
@@ -56,7 +56,7 @@
     <div class="mb-6">
         <h2 class="text-gray-500 text-sm uppercase tracking-wide">Butt Sleeve Inlay Design</h2>
         <p class="text-gray-300 text-medium">
-            {{cue.butt.buttSleeveInlayDesign}}
+            {{ButtSleeveInlayDesignDisplay[cue.butt.buttSleeveInlayDesign]}}
         </p>
     </div>
     <div class="mb-6">
@@ -68,7 +68,7 @@
     <div class="mb-6">
         <h2 class="text-gray-500 text-sm uppercase tracking-wide">Ring</h2>
         <p class="text-gray-300 text-medium">
-            {{cue.butt.ring.material.name}} {{ cue.butt.ring.ringDesign}} at locations {{cue.butt.ring.locations}}
+            {{RingDesignDisplay[cue.butt.ring.ringDesign]}} {{cue.butt.ring.material.name}} at locations {{cue.butt.ring.locations}}
         </p>
     </div>
     <div class="mb-6">
