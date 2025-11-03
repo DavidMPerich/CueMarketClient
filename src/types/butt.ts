@@ -1,16 +1,19 @@
+import { Material } from "./material";
+import { Ring } from "./ring";
+
 export type Butt = {
     id: string;
-    collarMaterialId: string;
-    forearmMaterialId: string;
+    collarMaterial: Material;
+    forearmMaterial: Material;
     pointType: string;
     pointPattern: string;
-    pointMaterialId: string;
+    pointMaterial: Material;
     veneers: string;
     wrapColor: string;
-    wrapMaterialId: string;
-    buttSleeveMaterialId: string;
+    wrapMaterial: Material;
+    buttSleeveMaterial: Material;
     buttSleeveInlayDesign: string;
-    buttSleeveInlayMaterialId: string;
-    ringId: string;
-    buttCapMaterialId: string;
+    buttSleeveInlayMaterial: Material;
+    ring: Ring;
+    buttCapMaterial: Material;
 }

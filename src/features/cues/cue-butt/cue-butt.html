@@ -1,1 +1,82 @@
-<p>cue-butt works!</p>
+@if (cue(); as cue) {
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Collar Material</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.butt.collarMaterial.name}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Forearm Material</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.butt.forearmMaterial.name}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Point Type</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.butt.pointType}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Point Pattern</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.butt.pointPattern}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Point Material</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.butt.pointMaterial.name}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Veneers</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.butt.veneers}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Wrap Color</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.butt.wrapColor}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Wrap Material</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.butt.wrapMaterial.name}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Butt Sleeve Material</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.butt.buttSleeveMaterial.name}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Butt Sleeve Inlay Design</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.butt.buttSleeveInlayDesign}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Butt Sleeve Inlay Material</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.butt.buttSleeveInlayMaterial.name}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Ring</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.butt.ring.material.name}} {{ cue.butt.ring.ringDesign}} at locations {{cue.butt.ring.locations}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Butt Cap Material</h2>
+        <p class="text-gray-300 text-medium">
+            {{cue.butt.buttCapMaterial.name}}
+        </p>
+    </div>
+}
+
+
