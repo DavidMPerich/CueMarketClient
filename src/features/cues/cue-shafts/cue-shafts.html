@@ -1,1 +1,13 @@
-<p>cue-shafts works!</p>
+@if ((shafts$ | async)?.length) {
+    <div class="mb-6">
+        <label for="shaftSelect" class="block mb-2 text-sm font-medium text-gray-300">Select Shaft</label>
+
+        <select id="shaftSelect" [(ngModel)]="selectedShaftId" class="select block w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700 bg-gray-50 p-2.5 shadow-sm">
+            @for (shaft of shafts$ | async; track shaft.id; let i = $index) {
+                <option [value]="shaft.id"> Shaft {{i + 1}} @if (shaft.maker) {- {{shaft.maker}}}</option> 
+            }
+        </select>
+    </div>
+} @else {
+    <p>This cue does not come with any shafts</p>
+}
