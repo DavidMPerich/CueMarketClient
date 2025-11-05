@@ -1,0 +1,38 @@
+@if (shaft(); as shaft) {
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Brand/Maker</h2>
+        <p class="text-gray-300 text-medium">
+            {{shaft.maker}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Material</h2>
+        <p class="text-gray-300 text-medium">
+            {{shaft.material.name}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Tip</h2>
+        <p class="text-gray-300 text-medium">
+            {{shaft.tip}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Ferrule Material</h2>
+        <p class="text-gray-300 text-medium">
+            {{shaft.ferruleMaterial.name}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Collar Material</h2>
+        <p class="text-gray-300 text-medium">
+            {{shaft.collarMaterial.name}}
+        </p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-gray-500 text-sm uppercase tracking-wide">Ring</h2>
+        <p class="text-gray-300 text-medium">
+            {{shaft.ring.material.name}} {{shaft.ring.ringDesign}} at locations {{shaft.ring.locations}} 
+        </p>
+    </div>
+}

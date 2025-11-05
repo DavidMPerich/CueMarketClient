@@ -11,7 +11,10 @@ export class ShaftService {
   private baseUrl = environment.apiUrl;
 
   getShafts(cueId: string) {
-    console.log('Fetching shafts for cueId:', this.baseUrl + 'cues/' + cueId + '/shafts');
     return this.http.get<Shaft[]>(this.baseUrl + 'cues/' + cueId + '/shafts');
+  }
+
+  getShaftById(shaftId: string) {
+    return this.http.get<Shaft>(this.baseUrl + 'shafts/' + shaftId);
   }
 }
