@@ -5,6 +5,9 @@
         <div class="flex flex-col text-white">
             <span class="font-semibold">{{cue.maker}}</span>
             <span class="text-sm">{{cue.ownerUserName}}</span>
+            @if (isOwner()) {
+                <span class="text-xs mt-1 italic text-green-400">Your Cue</span>
+            }
         </div>
     </div>
 </div>

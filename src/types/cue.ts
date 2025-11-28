@@ -3,6 +3,7 @@ import { Butt } from "./butt";
 export type Cue = {
     id: string;
     type: string;
+    ownerId: string;
     ownerUserName: string;
     maker: string;
     model: string;

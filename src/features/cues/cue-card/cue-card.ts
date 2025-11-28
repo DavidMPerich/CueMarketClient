@@ -10,4 +10,5 @@ import { RouterLink } from '@angular/router';
 })
 export class CueCard {
  cue = input.required<Cue>();
+ isOwner = input.required<boolean>();
 }

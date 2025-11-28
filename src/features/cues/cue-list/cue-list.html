@@ -1,5 +1,5 @@
 <div class="grid grid-cols-5 gap-6">
     @for (cue of cues$ | async; track cue.id) {
-        <app-cue-card [cue]="cue"/>
+        <app-cue-card [cue]="cue" [isOwner]="cue.ownerId === currentUserId$"/>
     }
 </div>
