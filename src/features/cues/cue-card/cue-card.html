@@ -1,14 +1,16 @@
 @if (cue(); as cue) {
-<div routerLink="/cues/{{cue.id}}" class="card cursor-pointer transition-all duration-300 ease-in-out transform hover:-translate-y-2">
-    <img src="/pool-cue.png" alt="" class="rounded-lg">
-    <div class="card-actions z-50 absolute bottom-0 w-full px-3 py-1 rounded-b-lg bg-gradient-to-t from-black via-black/75 to-black/0">
-        <div class="flex flex-col text-white">
-            <span class="font-semibold">{{cue.maker}}</span>
-            <span class="text-sm">{{cue.ownerUserName}}</span>
-            @if (isOwner()) {
-                <span class="text-xs mt-1 italic text-green-400">Your Cue</span>
-            }
-        </div>
+    <div routerLink="/cues/{{cue.id}}" class="card cursor-pointer transition-all duration-300 ease-in-out transform hover:-translate-y-2">
+        <img src="/pool-cue.png" alt="" class="rounded-lg">
+        @if (isOwner()) {
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-2 left-2 text-yellow-400 size-16">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+        }
+        <div class="card-actions z-50 absolute bottom-0 w-full px-3 py-1 rounded-b-lg bg-gradient-to-t from-black via-black/75 to-black/0">
+            <div class="flex flex-col text-white">
+                <span class="font-semibold">{{cue.maker}}</span>
+                <span class="text-sm">{{cue.ownerUserName}}</span>
+            </div>
+        </div>  
     </div>
-</div>
 }
