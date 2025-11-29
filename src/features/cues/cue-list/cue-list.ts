@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { Cue } from '../../../types/cue';
 import { AsyncPipe } from '@angular/common';
 import { CueCard } from "../cue-card/cue-card";
-import { AccountService } from '../../../core/services/account-service';
 
 @Component({
   selector: 'app-cue-list',
@@ -14,12 +13,15 @@ import { AccountService } from '../../../core/services/account-service';
 })
 export class CueList {
   private cueService = inject(CueService);
-  private accountService = inject(AccountService);
   protected cues$: Observable<Cue[]>;
-  protected currentUserId$: string | undefined;
+  protected currentUserId$: string | null = null;
 
   constructor() {
     this.cues$ = this.cueService.getCues();
-    this.currentUserId$ = this.accountService.currentUser()?.id;
+    const userJson = localStorage.getItem('user');
+    if (userJson) {
+      const user = JSON.parse(userJson);
+      this.currentUserId$ = user.id;
+    }
   }
 }
