@@ -20,9 +20,16 @@
                 <h2 class="text-gray-500 text-sm uppercase tracking-wide">Asking Price</h2>
                 <p class="text-green-700 font-bold text-xl">{{cue.price | currency}}</p>
             </div>
-            <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl font-semibold hover:bg-blue-700 transition">
-                Contact Seller
-            </button>
+            @if (isCueOwner()) {
+                <button class="mt-4 w-full bg-green-600 text-white py-2 rounded-xl font-semibold hover:bg-green-700 transition">
+                    Edit Listing
+                </button>
+            } @else {
+                <button class="mt-4 w-full bg-blue-800 text-white py-2 rounded-xl font-semibold hover:bg-blue-900 transition">
+                    Contact Seller
+                </button>
+            }
+            
         </div>
 
         <!-- Specifications -->
