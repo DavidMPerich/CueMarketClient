@@ -21,8 +21,14 @@
                 <p class="text-green-700 font-bold text-xl">{{cue.price | currency}}</p>
             </div>
             @if (isCueOwner()) {
-                <button class="mt-4 w-full bg-green-600 text-white py-2 rounded-xl font-semibold hover:bg-green-700 transition">
-                    Edit Listing
+                <button (click)="cueService.editMode.set(!cueService.editMode())" class="mt-4 w-full bg-green-600 text-white py-2 rounded-xl font-semibold hover:bg-green-700 transition">
+                    {{cueService.editMode() ? 'Cancel' : 'Edit Listing'}}
+                </button>
+                <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl font-semibold hover:bg-blue-700 transition">
+                    Share Listing
+                </button>
+                <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-xl font-semibold hover:bg-red-700 transition">
+                    Delete Listing
                 </button>
             } @else {
                 <button class="mt-4 w-full bg-blue-800 text-white py-2 rounded-xl font-semibold hover:bg-blue-900 transition">

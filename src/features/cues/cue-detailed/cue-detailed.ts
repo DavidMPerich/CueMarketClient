@@ -2,6 +2,7 @@ import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 import { Cue } from '../../../types/cue';
+import { CueService } from '../../../core/services/cue-service';
 
 @Component({
   selector: 'app-cue-detailed',
@@ -11,6 +12,7 @@ import { Cue } from '../../../types/cue';
 })
 export class CueDetailed implements OnInit {
   private route = inject(ActivatedRoute);
+  protected cueService = inject(CueService);
   protected cue = signal<Cue | undefined>(undefined);
   protected isCueOwner = computed(() => {
     const userJson = localStorage.getItem('user');

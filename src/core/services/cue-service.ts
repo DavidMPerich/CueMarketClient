@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Cue } from '../../types/cue';
 
@@ -9,6 +9,7 @@ import { Cue } from '../../types/cue';
 export class CueService {
   private http = inject(HttpClient);
   private baseUrl = environment.apiUrl;
+  editMode = signal(false);
 
   getCues() {
     return this.http.get<Cue[]>(this.baseUrl + 'cues');
