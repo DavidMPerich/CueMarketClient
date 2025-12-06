@@ -1,4 +1,55 @@
 @if (cue(); as cue) {
+    @if (cueService.editMode()) {
+        <form #editForm="ngForm" (ngSubmit)="updateOverview()" class="flex flex-col w-full gap-4">
+            <label class="floating-label">
+                <span>Maker/Brand</span>
+                <input class="input w-full" name="maker" [(ngModel)]="editableCue.maker" placeholder="Maker/Brand">
+            </label>
+            <label class="floating-label">
+                <span>Model</span>
+                <input class="input w-full" name="model" [(ngModel)]="editableCue.model" placeholder="Model">
+            </label>
+            <label class="floating-label">
+                <span>Year</span>
+                <input class="input w-full" name="year" [(ngModel)]="editableCue.year" placeholder="Year">
+            </label>
+            <label class="floating-label">
+                <span>Description</span>
+                <textarea class="textarea w-full" name="description" [(ngModel)]="editableCue.description" placeholder="Description"></textarea>
+            </label>
+            <label class="floating-label">
+                <span>Price</span>
+                <input class="input w-full" name="price" [(ngModel)]="editableCue.price" placeholder="Price">
+            </label>
+            <label class="floating-label">
+                <span>Type</span>
+                <input class="input w-full" name="type" [(ngModel)]="editableCue.type" placeholder="Type">
+            </label>
+            <label class="floating-label">
+                <span>Joint Type</span>
+                <input class="input w-full" name="jointType" [(ngModel)]="editableCue.jointType" placeholder="Joint Type">
+            </label>
+            <label class="floating-label">
+                <span>Imperfections</span>
+                <textarea class="textarea w-full" name="imperfections" [(ngModel)]="editableCue.imperfections" placeholder="Imperfections"></textarea>
+            </label>
+            <label class="floating-label">
+                <span>Weight</span>
+                <input class="input w-full" name="weight" [(ngModel)]="editableCue.weight" placeholder="Weight">
+            </label>
+            <label class="floating-label">
+                <span>Length</span>
+                <input class="input w-full" name="length" [(ngModel)]="editableCue.length" placeholder="Length">
+            </label>
+            <label class="floating-label">
+                <span>Verified?</span>
+                <input class="input w-full" name="isVerified" [(ngModel)]="editableCue.isVerified" placeholder="Verified?">
+            </label>
+            <div class="flex self-end">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    } @else {
     <div class="mb-6">
         <h2 class="text-gray-500 text-sm uppercase tracking-wide">Owner</h2>
         <p class="text-gray-300 text-medium">
@@ -34,5 +85,6 @@
         <p class="text-gray-300 text-medium">
             {{cue.imperfections}}
         </p>
-    </div>        
+    </div>
+    }        
 }

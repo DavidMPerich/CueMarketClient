@@ -17,3 +17,17 @@ export type Cue = {
     isVerified: boolean;
     description: string;
 }
+
+export type EditableCue = {
+    type?: string;
+    maker?: string;
+    model?: string;
+    year?: string;
+    jointType?: string;
+    imperfections?: string;
+    weight?: string;
+    length?: string;
+    price?: number;
+    isVerified?: boolean;
+    description?: string;
+}
